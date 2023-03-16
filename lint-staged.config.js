@@ -5,4 +5,6 @@ module.exports = {
     () => 'tsc-files --noEmit',
   ],
   '*.{js,jsx,ts,tsx,json,css,js}': ['prettier --write'],
+  // this will Format css and scss
+  '*.{css,scss}': 'stylelint --fix',
 };
