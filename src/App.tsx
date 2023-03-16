@@ -1,4 +1,4 @@
-import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, Outlet, Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +18,26 @@ function App() {
         >
           Learn React
         </a>
+
+        {/*
+          <Router>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="about" element={<About />} />
+                  <Route path="dashboard" element={<Dashboard />} />
+
+                  // Using path="*"" means "match anything", so this route
+                  //       acts like a catch-all for URLs that we don't have explicit
+                  //       routes for.
+                  <Route path="*" element={<NoMatch />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </Router>
+          <Routes>
+        */}
       </header>
     </div>
   );
