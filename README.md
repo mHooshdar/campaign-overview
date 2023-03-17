@@ -49,7 +49,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 In this folder, we have the `components` related to our page
 
 ## hooks
-In this folder, we have the `hooks` that we are using in the project. For adding `API` hooks with `react-query`, put them in the `hooks/api` folder.
+In this folder, we have the `hooks` that we use in the project. For adding `API` hooks with `react-query`, put them in the `hooks/api` folder.
 
 ## layout
 In this folder, we have the `layout` components. For adding a new `layout` you should add a folder and use it in your `router`
@@ -58,17 +58,17 @@ In this folder, we have the `layout` components. For adding a new `layout` you s
 In this folder, we have the `pages`
 
 ## store
-In this folder, we have the `redux` (personally do not like redux) reducers and functionalities. We used `redux-toolkit` for handling mutating state and some features that is exported.
+We have the `redux` (I personally do not like redux), reducers and functionalities in this folder. We used `redux-toolkit` to handle mutating states and some exported features.
 
 ## types
-We have our `types` and `interfaces` declaration in this folder and it's imported into other components
+We have our `types` and `interfaces` declaration in this folder, and it's imported into other components
 ## utils
 In this folder, we have the `utility` functions and also the `axios` instance
 
 
 ## Deploy on Vercel
 
-This project is deployed on `https://campaign-overview.vercel.app/` with vercel deployment
+This project is deployed on `https://campaign-overview.vercel.app/` with `vercel` deployment
 
 If you have any further questions or feedback, don't hesitate to contact me
 
