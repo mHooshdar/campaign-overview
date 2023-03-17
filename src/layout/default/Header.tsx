@@ -1,15 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { useEffect, useId, useState } from 'react';
+import { useCallback, useEffect, useId, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import HamIcon from '@icons/HamIcon';
 import Sun from '@icons/SunIcon';
 import Moon from '@icons/MoonIcon';
+import { storeSetLight, storeSetDark } from '@store/rootSlice';
+import { RootState } from '@store/index';
 
 function Header() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.root.theme);
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
-  const [isDark, setIsDark] = useState(false);
   const mobileId = useId();
+  const isDark = theme === 'dark';
 
   // TODO: add routes
   const headerItems = [
@@ -27,16 +32,16 @@ function Header() {
     },
   ];
 
-  function setDark() {
+  const setDark = useCallback(() => {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    setIsDark(true);
-  }
+    dispatch(storeSetDark());
+  }, [dispatch]);
 
   function setLight() {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('theme', 'light');
-    setIsDark(false);
+    dispatch(storeSetLight());
   }
 
   useEffect(() => {
@@ -47,7 +52,7 @@ function Header() {
     ) {
       setDark();
     }
-  }, []);
+  }, [setDark]);
 
   return (
     <header className="border-b dark:border-slate-600 dark:bg-gray-800 bg-white">

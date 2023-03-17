@@ -4,7 +4,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { Provider } from 'react-redux';
 import App from './App';
+import { store } from './store';
 import reportWebVitals from './reportWebVitals';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,11 +30,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <App />
-        <ToastContainer />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+          <ToastContainer />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </BrowserRouter>
+      </Provider>
     </QueryClientProvider>
   </React.StrictMode>
 );

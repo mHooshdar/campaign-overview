@@ -7,6 +7,7 @@ import Overview from '@pages/Overview';
 
 function App() {
   // TODO: add routes and lazy load them
+  // TODO: add airbnb styles to eslint
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
