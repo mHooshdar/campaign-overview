@@ -18,11 +18,13 @@ function HeaderItems({ elId, showHeader }: Props) {
         [showHeader ? 'hidden' : 'block']
       )}
       id={elId}
+      data-testid="header-item"
     >
       <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
         {headerItems.map(item => (
           <li key={item.to}>
             <Link
+              role={item.title}
               to={item.to}
               className={cn('block py-2 pr-4 pl-3 lg:p-0', [
                 location.pathname === item.to
