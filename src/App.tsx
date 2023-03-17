@@ -23,20 +23,22 @@ function App() {
   return (
     <ThemeProvider theme={themeMUI}>
       <CssBaseline />
-      <Suspense fallback={<div />}>
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            {routes.map(route => (
-              <Route
-                key={route.to}
-                index={route.to === '/'}
-                element={<route.component />}
-                path={route.to}
-              />
-            ))}
-          </Route>
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<DefaultLayout />}>
+          {routes.map(route => (
+            <Route
+              key={route.to}
+              index={route.to === '/'}
+              element={
+                <Suspense fallback={<div />}>
+                  <route.component />
+                </Suspense>
+              }
+              path={route.to}
+            />
+          ))}
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 }
