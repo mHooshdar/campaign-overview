@@ -6,19 +6,16 @@ import NotFound from '@pages/NoMatch';
 import Overview from '@pages/Overview';
 
 function App() {
+  // TODO: add routes and lazy load them
   return (
-    <div className="App">
-      <header className="App-header">
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route index element={<Overview />} />
-            <Route path="campaign" element={<Campaign />} />
-            <Route path="campaign/create" element={<CreateCampaign />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<DefaultLayout />}>
+        <Route index element={<Overview />} />
+        <Route path="campaign" element={<Campaign />} />
+        <Route path="campaign/create" element={<CreateCampaign />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 

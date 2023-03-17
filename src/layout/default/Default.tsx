@@ -5,7 +5,7 @@ function DefaultLayout() {
   return (
     <>
       <Header />
-      <main className="container mx-auto md:pt-3 pt-2 md:px-0 px-2">
+      <main className="container mx-auto pt-4 md:px-0 px-4 dark:bg-slate-900 bg-gray-50">
         <Outlet />
       </main>
     </>

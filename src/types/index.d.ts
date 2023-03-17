@@ -15,7 +15,7 @@ export interface OverviewDTO {
   revenue: ChartItem[];
 }
 
-export interface CampaignDTO {
+export interface CampaignItemDTO {
   id: string;
   name: string;
   installs: ChartItem[];
