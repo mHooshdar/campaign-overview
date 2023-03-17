@@ -2,11 +2,10 @@ import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import { useCallback, useEffect, useId, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import HamIcon from '@icons/HamIcon';
-import Sun from '@icons/SunIcon';
-import Moon from '@icons/MoonIcon';
 import { storeSetLight, storeSetDark } from '@store/rootSlice';
 import { RootState } from '@store/index';
+import { Button, Container } from '@mui/material';
+import { Menu, NightsStay, WbSunny } from '@mui/icons-material';
 
 function Header() {
   const dispatch = useDispatch();
@@ -56,7 +55,7 @@ function Header() {
 
   return (
     <header className="border-b dark:border-slate-600 dark:bg-gray-800 bg-white">
-      <nav className="border-gray-200 md:px-0 px-4 py-3 container mx-auto">
+      <Container className="border-gray-200 md:px-0 px-4 py-3 container mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <Link to="/" className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
@@ -64,24 +63,23 @@ function Header() {
             </span>
           </Link>
           <div className="flex items-center lg:order-2">
-            <button
-              id="theme-toggle"
+            <Button
               type="button"
               onClick={isDark ? setLight : setDark}
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
+              className="!text-gray-500 !dark:text-gray-400"
             >
-              {isDark ? <Sun /> : <Moon />}
-            </button>
-            <button
+              {isDark ? <WbSunny /> : <NightsStay />}
+            </Button>
+            <Button
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
+              className="!text-gray-500 !dark:text-gray-400 lg:hidden"
               aria-controls={mobileId}
               aria-expanded={showHeader}
               onClick={() => setShowHeader(!showHeader)}
             >
               <span className="sr-only">Open main menu</span>
-              <HamIcon />
-            </button>
+              <Menu />
+            </Button>
           </div>
 
           <div
@@ -109,7 +107,7 @@ function Header() {
             </ul>
           </div>
         </div>
-      </nav>
+      </Container>
     </header>
   );
 }
