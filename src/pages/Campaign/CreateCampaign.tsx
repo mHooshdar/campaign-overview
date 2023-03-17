@@ -1,15 +1,15 @@
+import InputComponent from '@components/InputComponent';
 import {
   useGetCampaignMapped,
   useMutateCampaign,
 } from '@hooks/api/useCampaign';
-import { Button, Input, InputLabel } from '@mui/material';
+import { Button } from '@mui/material';
 import generateCampaign from '@utils/generateCampaign';
-import { FormEvent, useId, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 
 function CreateCampaign() {
   const [campaign, setCampaign] = useState('');
-  const nameId = useId();
   const { mappedData: campaignData } = useGetCampaignMapped();
   const mutation = useMutateCampaign();
 
@@ -30,16 +30,9 @@ function CreateCampaign() {
 
   return (
     <form onSubmit={formSubmit}>
-      <InputLabel htmlFor={nameId} className="!mb-2">
-        Name
-      </InputLabel>
-      <Input
-        type="text"
-        id={nameId}
-        className="block w-full"
-        placeholder="Enter campaign name"
+      <InputComponent
         onChange={e => setCampaign(e.target.value)}
-        required
+        title="Name"
       />
 
       <Button

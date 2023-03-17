@@ -9,6 +9,7 @@ export async function getCampaign(query: GetCampaignInput) {
   return axios.get<CampaignItemDTO[]>('/campaigns', { params: query });
 }
 
+// not used
 export async function createCampaign(data: Omit<CampaignItemDTO, 'id'>) {
   return axios.post<CampaignItemDTO[]>('/campaigns', data);
 }
