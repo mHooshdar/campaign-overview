@@ -68,7 +68,7 @@ In this folder, we have the `utility` functions and also the `axios` instance
 
 ## Deploy on Vercel
 
-This project is deployed on `vercel url` with vercel deployment
+This project is deployed on `https://campaign-overview.vercel.app/` with vercel deployment
 
 If you have any further questions or feedback, don't hesitate to contact me
 
