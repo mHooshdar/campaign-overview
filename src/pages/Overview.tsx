@@ -1,6 +1,6 @@
 import CampaignLineChart from '@components/CampaignLineChart';
-import Skeleton from '@components/Skeleton';
 import { useGetOverview } from '@hooks/api/useOverview';
+import { Skeleton } from '@mui/material';
 
 function Overview() {
   const getOverview = useGetOverview({});

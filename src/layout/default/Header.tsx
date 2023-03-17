@@ -6,6 +6,7 @@ import { storeSetLight, storeSetDark } from '@store/rootSlice';
 import { RootState } from '@store/index';
 import { Button, Container } from '@mui/material';
 import { Menu, NightsStay, WbSunny } from '@mui/icons-material';
+import routes from '../../routes';
 
 function Header() {
   const dispatch = useDispatch();
@@ -14,22 +15,7 @@ function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const mobileId = useId();
   const isDark = theme === 'dark';
-
-  // TODO: add routes
-  const headerItems = [
-    {
-      title: 'Overview',
-      to: '/',
-    },
-    {
-      title: 'Campaigns',
-      to: '/campaign',
-    },
-    {
-      title: 'Create',
-      to: '/campaign/create',
-    },
-  ];
+  const headerItems = routes.filter(route => route.title);
 
   const setDark = useCallback(() => {
     document.documentElement.classList.add('dark');
@@ -72,7 +58,7 @@ function Header() {
             </Button>
             <Button
               type="button"
-              className="!text-gray-500 !dark:text-gray-400 lg:hidden"
+              className="!text-gray-500 !dark:text-gray-400 lg:!hidden"
               aria-controls={mobileId}
               aria-expanded={showHeader}
               onClick={() => setShowHeader(!showHeader)}

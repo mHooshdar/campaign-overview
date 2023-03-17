@@ -1,4 +1,5 @@
 import { ChartItem } from '@types';
+import { memo } from 'react';
 import {
   Line,
   LineChart,
@@ -45,4 +46,5 @@ function CampaignLineChart({
   );
 }
 
-export default CampaignLineChart;
+// for some performance issues
+export default memo(CampaignLineChart);
