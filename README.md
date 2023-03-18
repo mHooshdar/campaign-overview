@@ -60,6 +60,9 @@ In this folder, we have the `pages`
 ## store
 We have the `redux` (I personally do not like redux), reducers and functionalities in this folder. We used `redux-toolkit` to handle mutating states and some exported features.
 
+## stories
+In this folder you can write stories for your component with `storybook`. It's just a template and `stories` are not correct
+
 ## types
 We have our `types` and `interfaces` declaration in this folder, and it's imported into other components
 ## utils
